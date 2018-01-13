@@ -77,7 +77,7 @@ class SkyBlockListener implements Listener {
         $island = $this->plugin->getIslandManager()->getOnlineIsland($event->getPlayer()->getLevel()->getName());
         if($island instanceof Island) {
             if(!$event->getPlayer()->isOp() and !in_array(strtolower($event->getPlayer()->getName()), $island->getAllMembers())) {
-                $event->getPlayer()->sendPopup(TextFormat::RED . "You must be part of this island to break here!");
+                $event->getPlayer()->sendPopup(TextFormat::GREEN . "[SKYREALMPE]" .TextFormat::RED. "You must be part of this island to break here!");
                 $event->setCancelled();
             }
             else  {
@@ -89,6 +89,12 @@ class SkyBlockListener implements Listener {
                     $this->addItemMultipleTimes(20, Item::get(Item::LAPIS_ORE), $items);
                     $this->addItemMultipleTimes(40, Item::get(Item::COAL), $items);
                     $this->addItemMultipleTimes(74, Item::get(Item::COBBLESTONE), $items);
+                    $this->addItemMultipleTimes(20, Item::get(264), $items);
+                    $this->addItemMultipleTimes(15, Item::get(41), $items);
+                    $this->addItemMultipleTimes(20, Item::get(15), $items);
+                    $this->addItemMultipleTimes(20, Item::get(266), $items);
+                    $this->addItemMultipleTimes(8, Item::get(388), $items);
+                    $this->addItemMultipleTimes(7, Item::get(57), $items);
                     $event->setDrops([$items[array_rand($items)]]);
                 }
             }
@@ -102,7 +108,7 @@ class SkyBlockListener implements Listener {
         $island = $this->plugin->getIslandManager()->getOnlineIsland($event->getPlayer()->getLevel()->getName());
         if($island instanceof Island) {
             if(!$event->getPlayer()->isOp() and !in_array(strtolower($event->getPlayer()->getName()), $island->getAllMembers())) {
-                $event->getPlayer()->sendPopup(TextFormat::RED . "You must be part of this island to place here!");
+                $event->getPlayer()->sendPopup(TextFormat::RED . "[SKYREALMPE] You must be part of this island to place here!");
                 $event->setCancelled();
             }
         }
@@ -115,7 +121,7 @@ class SkyBlockListener implements Listener {
         $island = $this->plugin->getIslandManager()->getOnlineIsland($event->getPlayer()->getLevel()->getName());
         if($island instanceof Island) {
             if(!$event->getPlayer()->isOp() and !in_array(strtolower($event->getPlayer()->getName()), $island->getAllMembers())) {
-                $event->getPlayer()->sendPopup(TextFormat::RED . "You must be part of this island to place here!");
+                $event->getPlayer()->sendPopup(TextFormat::RED . "[SKYREALMPE] You must be part of this island to place here!");
                 $event->setCancelled();
             }
         }
