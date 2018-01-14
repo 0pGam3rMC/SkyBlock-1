@@ -20,7 +20,6 @@ use pocketmine\Player;
 use pocketmine\utils\TextFormat;
 use SkyBlock\chat\Chat;
 use SkyBlock\island\Island;
-use pocketmine\event\player\PlayerDeathEvent
 
 class SkyBlockListener implements Listener {
 
@@ -198,6 +197,4 @@ class SkyBlockListener implements Listener {
 
 }
 
-public function PlayerDeath(PlayerDeathEvent $event){
-    $event->setKeepInventory(true);}
-}
+
